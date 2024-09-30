@@ -1,22 +1,22 @@
 # Bootable Environment
 
-## Requirements
+### Requirements
 
 - A USB drive (at least 2GB capacity)
 - Arch Linux ISO file (latest version)
 - A system with a Linux distribution installed (e.g., Ubuntu, Fedora) or Windows with a tool like Rufus.
 
-## Steps for Linux Users
+### Steps for Linux Users
 
-### 1. Download the Arch Linux ISO
+##### Download the Arch Linux ISO
 
 - Go to the [official Arch Linux website](https://www.archlinux.org/download/) and download the latest ISO.
 
-### 2. Insert your USB drive
+##### Insert your USB drive
 
 - Connect the USB drive to your computer.
 
-### 3. Identify your USB drive
+##### Identify your USB drive
 
 - Open a terminal and run:
   
@@ -26,7 +26,7 @@
 
 - Find your USB drive (e.g., `/dev/sdX`, where `X` is the drive letter).
 
-### 4. Create the bootable USB
+##### Create the bootable USB
 
 - Use the `dd` command to write the ISO to your USB:
   
@@ -36,7 +36,7 @@
 
 - Replace `/path/to/archlinux.iso` with the path to your downloaded ISO and `/dev/sdX` with your USB drive (don’t include partition numbers like `/dev/sdX1`).
 
-### 5. Sync and eject
+##### Sync and eject
 
 - Wait for the command to finish, then run:
   
@@ -52,22 +52,22 @@
 
 ## Steps for Windows Users
 
-### 1. Download the Arch Linux ISO
+##### Download the Arch Linux ISO
 
 - Visit the [Arch Linux website](https://www.archlinux.org/download/) and download the latest ISO.
 
-### 2. Download Rufus
+##### Download Rufus
 
 - Go to the [Rufus website](https://rufus.ie/) and download the latest version.
 
-### 3. Create the bootable USB
+##### Create the bootable USB
 
 - Open Rufus.
 - Select your USB drive in the "Device" field.
 - In the "Boot selection" field, choose the downloaded Arch Linux ISO.
 - Click **Start** and wait for the process to finish.
 
-### 4. Eject the USB
+##### Eject the USB
 
 - Once Rufus finishes, safely eject the USB.
 
@@ -84,32 +84,32 @@
 1. Before proceeding with the installation, check for an active internet connection by running:
    
    ```bash
-   ping 1.1.1.1
+   # ping 1.1.1.1
    ```
 
 2. Arch Linux live environment now includes the `archinstall` script:
    
    ```bash
-   archinstall
+   # archinstall
    ```
 
 The `archinstall` script provides an easy, guided way to install the system via a text-based installer.
 
 ## Arch Install Script Steps
 
-### 1. Language Selection
+##### Language
 
 - Select your desired language for the installation process.
 
-### 2. Keyboard Layout
-
-- Choose a keyboard layout (default is `us` for U.S. English). You can pick from various layouts based on your preference.
-
-### 3. Mirror Region
+##### Mirrors
 
 - Select the region for your package mirrors. A nearby region speeds up package downloads during installation.
 
-### 4. Disk Selection
+##### Locales
+
+- Choose a keyboard layout (default is `us` for U.S. English). You can pick from various layouts based on your preference.
+
+##### Disk configuration
 
 - Select the disk where you want to install Arch Linux. You'll see a list of available drives (e.g., `/dev/sda`, `/dev/nvme0n1`).
 - Options include:
@@ -117,76 +117,76 @@ The `archinstall` script provides an easy, guided way to install the system via 
   - **Manual partitioning** for more control over disk layout.
 - Choose the partition type (e.g., `ext4`, `btrfs`, `xfs`) for your root and home partitions.
 
-### 5. Encryption (Optional)
+##### Encryption (Optional)
 
 - You can encrypt your disk with LUKS for added security.
 - If selected, you’ll set a password to unlock the disk at boot time.
 
-### 6. Bootloader Selection
+##### Bootloader
 
 - Choose the bootloader to install:
   - **GRUB** (default)
   - **systemd-boot**
   - Or select none if you wish to configure it manually later.
 
-### 7. Swap Space
+##### Swap
 
 - Choose whether to create a swap file, swap partition, or none.
 - Set the size of the swap file (typically 1-2x the amount of RAM).
 
-### 8. Filesystem Type
+##### Filesystem Type
 
 - Select the filesystem for your root partition:
   - **ext4** (default and common)
   - **btrfs** (for advanced features like snapshots)
   - **xfs**, **f2fs**, etc.
 
-### 9. Hostname
+##### Hostname
 
 - Set a hostname for your machine (e.g., `archlinux`).
 
-### 10. Root Password
+##### Root Password
 
 - Set a password for the root user (administrator).
 
-### 11. User Creation
+##### User Creation
 
 - Create a non-root user account for daily operations.
 - Set a password for this user.
 - Optionally, add the user to the sudo group for administrative privileges.
 
-### 12. Profile Selection
+##### Profile Selection
 
 - Choose a system profile:
   - **Desktop environment** (like GNOME, KDE Plasma, Xfce, etc.)
   - **Headless installation** (minimal install without GUI)
   - **Custom** (install what you want without predefined packages).
 
-### 13. Additional Packages
+##### Additional Packages
 
 - Optionally, install additional packages like:
   - **vim** or **nano** (text editors)
   - **git**, **networkmanager**, and other utilities.
 - You can skip this step and install packages later if preferred.
 
-### 14. Network Configuration
+##### Network Configuration
 
 - Choose a network management tool:
   - **NetworkManager** (common for laptops/desktops)
   - **iwd**, **wpa_supplicant**, etc.
 - The script may auto-configure your network, depending on your choice.
 
-### 15. Time Zone & Localization
+##### Time Zone & Localization
 
 - Select your time zone (e.g., `Europe/London`).
 - Set the system locale (default is `en_US.UTF-8`).
 
-### 16. Finalize Installation
+##### Finalize Installation
 
 - Review your configuration before starting the installation.
 - Once confirmed, the system will be installed according to your selections.
 
-### 17. Post-Installation
+##### Post-Installation
 
 - After installation, you’ll be prompted to reboot into your new Arch Linux system. Reboot by running:
   
